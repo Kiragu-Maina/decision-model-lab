@@ -1,7 +1,8 @@
-# jevbench
+# Decision Model Lab
 
-`jevbench` is a reproducible benchmark for models that accept shared state plus
-typed questions and return probability distributions over caller-defined
+Decision Model Lab is an open benchmark and interactive demonstration for
+local probabilistic decision models. Its `jevbench` harness accepts shared state
+plus typed questions and scores probability distributions over caller-defined
 answers. It is designed to compare Jev-compatible servers, SemIf-style direct
 logit scorers, kev, and future local decision models without changing the test
 corpus or scoring code.
