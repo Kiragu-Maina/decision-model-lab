@@ -1,0 +1,28 @@
+services:
+  demo:
+    profiles: ["demo"]
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    environment:
+      KEV_BASE_URL: ${KEV_BASE_URL:-http://host.docker.internal:8009}
+      SEMIF_BASE_URL: ${SEMIF_BASE_URL:-http://host.docker.internal:8011}
+      MODEL_TIMEOUT_MS: ${MODEL_TIMEOUT_MS:-8000}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3000:3000"
+
+  evaluator:
+    build:
+      context: .
+    environment:
+      JEVBENCH_BASE_URL: ${JEVBENCH_BASE_URL:-http://host.docker.internal:8008}
+      JEVBENCH_MODEL: ${JEVBENCH_MODEL:-local}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./reports:/app/reports
+      - ./replays:/app/replays:ro
+    command:
+      - validate

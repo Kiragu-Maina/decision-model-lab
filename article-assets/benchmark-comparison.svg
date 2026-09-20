@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Kev and SemIf benchmark comparison</title>
+  <desc id="desc">SemIf reached 86.1 percent accuracy with 1365.7 millisecond mean latency and 0.186 Brier score. Kev reached 65.8 percent accuracy with 78.3 millisecond mean latency and 0.456 Brier score on 86 cases and 202 decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08121d"/>
+      <stop offset="1" stop-color="#111d27"/>
+    </linearGradient>
+    <linearGradient id="semif" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#45dbc0"/>
+      <stop offset="1" stop-color="#75eed8"/>
+    </linearGradient>
+    <linearGradient id="kev" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8d4d"/>
+      <stop offset="1" stop-color="#ffb15e"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1420" cy="120" r="260" fill="#45dbc0" opacity="0.05"/>
+  <circle cx="160" cy="790" r="290" fill="#ff8d4d" opacity="0.05"/>
+
+  <text x="100" y="102" fill="#f4f7f8" font-family="Inter, SF Pro Display, Arial, sans-serif" font-size="52" font-weight="700">Two local models, two different tradeoffs</text>
+  <text x="100" y="150" fill="#9fb0bd" font-family="Inter, SF Pro Text, Arial, sans-serif" font-size="24">The same fixed corpus: 86 cases · 202 scored decisions · Apple silicon host</text>
+
+  <g transform="translate(100 207)">
+    <circle cx="12" cy="12" r="10" fill="#45dbc0"/>
+    <text x="36" y="20" fill="#d9e2e7" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600">SemIf · Qwen3.5 4B MLX</text>
+    <circle cx="385" cy="12" r="10" fill="#ff984f"/>
+    <text x="409" y="20" fill="#d9e2e7" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600">Kev · 0.5B</text>
+  </g>
+
+  <g transform="translate(100 282)" font-family="Inter, SF Pro Text, Arial, sans-serif">
+    <text x="0" y="0" fill="#f4f7f8" font-size="28" font-weight="650">Accuracy</text>
+    <text x="1400" y="0" fill="#8194a3" font-size="20" text-anchor="end">higher is better</text>
+    <rect x="0" y="30" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="30" width="1206" height="42" rx="21" fill="url(#semif)" filter="url(#glow)"/>
+    <text x="1182" y="59" fill="#08121d" font-size="22" font-weight="750" text-anchor="end">86.1%</text>
+    <rect x="0" y="89" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="89" width="921" height="42" rx="21" fill="url(#kev)"/>
+    <text x="897" y="118" fill="#241308" font-size="22" font-weight="750" text-anchor="end">65.8%</text>
+    <text x="1400" y="114" fill="#ffb15e" font-size="22" font-weight="650" text-anchor="end">+20.3 points for SemIf</text>
+  </g>
+
+  <g transform="translate(100 490)" font-family="Inter, SF Pro Text, Arial, sans-serif">
+    <text x="0" y="0" fill="#f4f7f8" font-size="28" font-weight="650">Mean latency</text>
+    <text x="1400" y="0" fill="#8194a3" font-size="20" text-anchor="end">lower is faster</text>
+    <rect x="0" y="30" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="30" width="1275" height="42" rx="21" fill="url(#semif)"/>
+    <text x="1249" y="59" fill="#08121d" font-size="22" font-weight="750" text-anchor="end">1,365.7 ms</text>
+    <rect x="0" y="89" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="89" width="73" height="42" rx="21" fill="url(#kev)" filter="url(#glow)"/>
+    <text x="98" y="118" fill="#ffb15e" font-size="22" font-weight="750">78.3 ms</text>
+    <text x="1400" y="114" fill="#ffb15e" font-size="22" font-weight="650" text-anchor="end">Kev is 17.4× faster</text>
+  </g>
+
+  <g transform="translate(100 698)" font-family="Inter, SF Pro Text, Arial, sans-serif">
+    <text x="0" y="0" fill="#f4f7f8" font-size="28" font-weight="650">Brier score</text>
+    <text x="1400" y="0" fill="#8194a3" font-size="20" text-anchor="end">probability error · lower is better</text>
+    <rect x="0" y="30" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="30" width="521" height="42" rx="21" fill="url(#semif)" filter="url(#glow)"/>
+    <text x="497" y="59" fill="#08121d" font-size="22" font-weight="750" text-anchor="end">0.186</text>
+    <rect x="0" y="89" width="1400" height="42" rx="21" fill="#263541"/>
+    <rect x="0" y="89" width="1277" height="42" rx="21" fill="url(#kev)"/>
+    <text x="1253" y="118" fill="#241308" font-size="22" font-weight="750" text-anchor="end">0.456</text>
+  </g>
+
+  <text x="100" y="865" fill="#8194a3" font-family="Inter, SF Pro Text, Arial, sans-serif" font-size="18">Accuracy is a corpus result. Each live decision still carries its own probability—and neither number is a production guarantee.</text>
+</svg>

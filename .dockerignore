@@ -1,0 +1,10 @@
+.git
+.venv
+.venvs
+__pycache__
+*.pyc
+reports
+replays
+.models
+web/node_modules
+web/.next
